@@ -1,37 +1,23 @@
 package com.sinharahul.bookpedia
 
-import androidx.compose.animation.AnimatedVisibility
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.material.Button
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Text
-import androidx.compose.runtime.*
-import androidx.compose.ui.Alignment
-import androidx.compose.ui.Modifier
-import org.jetbrains.compose.resources.painterResource
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
+import com.sinharahul.bookpedia.book.data.network.KtorRemoteBookDataSource
+import com.sinharahul.bookpedia.book.data.repository.DefaultBookRepository
+import com.sinharahul.bookpedia.book.presentation.book_list.BookListScreen
+import com.sinharahul.bookpedia.book.presentation.book_list.BookListViewModel
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-import bookpedia.composeapp.generated.resources.Res
-import bookpedia.composeapp.generated.resources.compose_multiplatform
-
+// 2:39:40
 @Composable
 @Preview
 fun App() {
-    MaterialTheme {
-        var showContent by remember { mutableStateOf(false) }
-        Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
-            Button(onClick = { showContent = !showContent }) {
-                Text("Click me!")
-            }
-            AnimatedVisibility(showContent) {
-                val greeting = remember { Greeting().greet() }
-                Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
-                    Image(painterResource(Res.drawable.compose_multiplatform), null)
-                    Text("Compose: $greeting")
-                }
-            }
-        }
-    }
+    BookListScreen(
+        viewModel = remember { BookListViewModel(
+            bookRepository = DefaultBookRepository(
+                remoteBookDataSource = KtorRemoteBookDataSource
+            )
+        ) },
+        onBookClick = {}
+    )
 }
