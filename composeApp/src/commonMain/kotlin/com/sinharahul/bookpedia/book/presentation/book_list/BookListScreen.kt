@@ -38,6 +38,7 @@ import bookpedia.composeapp.generated.resources.no_favorite_books
 import bookpedia.composeapp.generated.resources.no_search_results
 import bookpedia.composeapp.generated.resources.search_results
 import com.sinharahul.bookpedia.book.domain.Book
+import com.sinharahul.bookpedia.book.presentation.BookListViewModel
 import com.sinharahul.bookpedia.book.presentation.book_list.components.BookList
 import com.sinharahul.bookpedia.book.presentation.book_list.components.BookSearchBar
 import com.sinharahul.bookpedia.core.presentation.DarkBlue
