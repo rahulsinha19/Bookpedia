@@ -1,11 +1,9 @@
-package com.sinharahul.bookpedia.book.presentation
+package com.sinharahul.bookpedia.book.presentation.book_list
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.sinharahul.bookpedia.book.domain.Book
 import com.sinharahul.bookpedia.book.domain.BookRepository
-import com.sinharahul.bookpedia.book.presentation.book_list.BookListAction
-import com.sinharahul.bookpedia.book.presentation.book_list.BookListState
 import com.sinharahul.bookpedia.core.domain.onError
 import com.sinharahul.bookpedia.core.domain.onSuccess
 import com.sinharahul.bookpedia.core.presentation.toUiText
