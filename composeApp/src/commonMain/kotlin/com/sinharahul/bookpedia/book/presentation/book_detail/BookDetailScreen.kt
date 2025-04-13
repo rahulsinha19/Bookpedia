@@ -135,7 +135,10 @@ private fun BookDetailScreenContent(
                             horizontalArrangement = Arrangement.Center
                         ) {
                             state.book.languages.forEach { language ->
-                                BookChip(size = ChipSize.SMALL) {
+                                BookChip(
+                                    modifier = Modifier.padding(2.dp),
+                                    size = ChipSize.SMALL
+                                ) {
                                     Text(
                                         text = language.uppercase(),
                                         style = MaterialTheme.typography.bodyMedium
